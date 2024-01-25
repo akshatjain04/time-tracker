@@ -45,6 +45,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import training.taylor.timetracker.core.dao.TimeEntry;
+
 import java.util.ArrayList;
 import java.util.List;
 

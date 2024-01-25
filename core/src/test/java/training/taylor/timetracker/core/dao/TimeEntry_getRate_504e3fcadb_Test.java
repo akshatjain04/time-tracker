@@ -43,6 +43,9 @@ package training.taylor.timetracker.core.dao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.Assert;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -62,11 +65,13 @@ public class TimeEntry_getRate_504e3fcadb_Test {
     public void testCheckReturnTypeGetRate() {
         TimeEntry timeEntry = new TimeEntry();
         float rate = timeEntry.getRate();
-        if (rate instanceof Float){
-            Assert.assertTrue(true);
-        } else {
-            Assert.fail();
-        }
+
+        // Incompatible conditional operand types float and FloatJava(16777232)
+        // if (rate instanceof Float) {
+        // Assert.assertTrue(true);
+        // } else {
+        // Assert.fail();
+        // }
     }
 
     @Test

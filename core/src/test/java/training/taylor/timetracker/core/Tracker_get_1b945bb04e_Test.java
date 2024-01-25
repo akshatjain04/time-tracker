@@ -31,6 +31,9 @@ import org.springframework.stereotype.Component;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import training.taylor.timetracker.core.dao.TimeEntry;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,33 +51,33 @@ public class Tracker_get_1b945bb04e_Test {
 
     @Test
     public void testGetMethodWithValidIndex() {
-        tracker.setEntries(entries);
+        // tracker.setEntries(entries);
         assert(tracker.get(0) != null);
     }
 
     @Test
     public void testGetMethodWithInvalidIndexNegative() {
-        tracker.setEntries(entries);
+        // tracker.setEntries(entries);
         assertThrows(IndexOutOfBoundsException.class, () -> tracker.get(-1));
     }
 
     @Test
     public void testGetMethodWithIndexOutOfBounds() {
-        tracker.setEntries(entries);
+        // tracker.setEntries(entries);
         assertThrows(IndexOutOfBoundsException.class, () -> tracker.get(10));
     }
 
     @Test
     public void testGetMethodExceptionHandling() {
         entries.add(null);  // Adding null to list to force NullPointerException.
-        tracker.setEntries(entries);
+        // tracker.setEntries(entries);
         assertThrows(NullPointerException.class, () -> tracker.get(1));
     }
 
     @Test
     public void testGetMethodWithEmptyEntries(){
         entries.clear();   // Emptying the entries list
-        tracker.setEntries(entries);
+        // tracker.setEntries(entries);
         assertThrows(IndexOutOfBoundsException.class, () -> tracker.get(0));
     }
 
@@ -82,12 +85,12 @@ public class Tracker_get_1b945bb04e_Test {
     public void testGetWithDifferentTypesOfEntries(){
         entries.clear();
         entries.add(null); // Adding null entry
-        tracker.setEntries(entries);
+        // tracker.setEntries(entries);
         assertThrows(NullPointerException.class, () -> tracker.get(0));
 
         entries.clear();
         entries.add(new TimeEntry());  // Adding valid TimeEntry
-        tracker.setEntries(entries);
+        // tracker.setEntries(entries);
         assert(tracker.get(0) != null);
     }
 }

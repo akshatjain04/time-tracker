@@ -51,10 +51,10 @@ public class Tracker_add_7d27642e21_Test {
 
     @Autowired
     private Tracker tracker;
-    
+
     private TimeEntry entry;
 
-    @BeforeEach 
+    @BeforeEach
     public void setup() {
         tracker = new Tracker();
         entry = new TimeEntry();
@@ -68,7 +68,7 @@ public class Tracker_add_7d27642e21_Test {
 
         assertNotEquals(originalSize, newSize);
         assertEquals(originalSize + 1, newSize);
-        assertTrue(tracker.get(newSize-1) == entry);
+        assertTrue(tracker.get(newSize - 1) == entry);
     }
 
     @Test

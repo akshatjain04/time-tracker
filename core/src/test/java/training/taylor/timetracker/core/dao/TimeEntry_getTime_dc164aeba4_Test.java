@@ -21,7 +21,10 @@ public class TimeEntry_getTime_dc164aeba4_Test {
     @Test
     public void testGetTimeReturnsInt() {
         timeEntry.setTime(12);
-        assertTrue(timeEntry.getTime() instanceof Integer);
+
+        // This is the valid format for assertion
+        Integer actualTime = timeEntry.getTime();
+        assertEquals(Integer.class, actualTime.getClass());
     }
 
     @Test
@@ -36,7 +39,7 @@ public class TimeEntry_getTime_dc164aeba4_Test {
         timeEntry.setTime(23); // setting time at max range limit
         assertTrue(timeEntry.getTime() >= 0 && timeEntry.getTime() <= 23);
     }
-    
+
     @Test
     public void testGetTimeAfterValueChange() {
         int changedTime = 11;
