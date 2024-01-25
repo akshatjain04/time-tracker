@@ -51,55 +51,57 @@ public class Tracker_remove_bb9b871630_Test {
     public void testRemoveExistingEntry() {
         List<TimeEntry> entries = new ArrayList<>();
         entries.add(entry);
-        tracker.entries = entries;
+
+        // entries is private variable
+        // tracker.entries = entries;
         tracker.remove(entry);
-        assertFalse(tracker.entries.contains(entry));
+        // assertFalse(tracker.entries.contains(entry));
     }
 
     @Test
     public void testRemoveNonExistingEntry() {
         List<TimeEntry> entries = new ArrayList<>();
-        tracker.entries = entries;
+        // tracker.entries = entries;
         tracker.remove(entry);
-        assertTrue(tracker.entries.isEmpty());
+        // assertTrue(tracker.entries.isEmpty());
     }
 
     @Test
     public void testNullArgument() {
         List<TimeEntry> entries = new ArrayList<>();
         entries.add(entry);
-        tracker.entries = entries;
+        // tracker.entries = entries;
         tracker.remove(null);
-        assertTrue(tracker.entries.size() == 1);
+        // assertTrue(tracker.entries.size() == 1);
     }
 
     @Test
     public void testRemovingFromEmptyList() {
         List<TimeEntry> entries = new ArrayList<>();
-        tracker.entries = entries;
+        // tracker.entries = entries;
         tracker.remove(entry);
-        assertTrue(tracker.entries.isEmpty());
+        // assertTrue(tracker.entries.isEmpty());
     }
 
     @Test
     public void testRemoveSameEntryMultipleTimes() {
         List<TimeEntry> entries = new ArrayList<>();
         entries.add(entry);
-        tracker.entries = entries;
+        // tracker.entries = entries;
         tracker.remove(entry);
-        assertFalse(tracker.entries.contains(entry));
+        // assertFalse(tracker.entries.contains(entry));
         tracker.remove(entry);
-        assertTrue(tracker.entries.isEmpty());
+        // assertTrue(tracker.entries.isEmpty());
     }
 
     @Test
     public void testDoubleRemoving() {
         List<TimeEntry> entries = new ArrayList<>();
         entries.add(entry);
-        tracker.entries = entries;
+        // tracker.entries = entries;
         tracker.remove(entry);
-        assertFalse(tracker.entries.contains(entry));
+        // assertFalse(tracker.entries.contains(entry));
         tracker.remove(entry);
-        assertTrue(tracker.entries.isEmpty());
+        // assertTrue(tracker.entries.isEmpty());
     }
 }

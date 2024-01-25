@@ -34,6 +34,8 @@ package training.taylor.timetracker.core;
 import org.junit.Before;
 import org.junit.Test;
 
+import training.taylor.timetracker.core.dao.TimeEntry;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import static org.mockito.Mockito.mock;

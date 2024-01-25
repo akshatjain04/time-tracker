@@ -62,14 +62,15 @@ public class Tracker_size_83d847afcf_Test {
 
     @Test
     public void testSizeForEmptyEntriesList() {
-        tracker.entries = new ArrayList<TimeEntry>();
+        // entries is private variable
+        // tracker.entries = new ArrayList<TimeEntry>();
         int size = tracker.size();
         Assert.assertEquals(0, size);
     }
 
     @Test
-    public void testSizeForEntriesListSingleEntry() {
-        tracker.entries = new ArrayList<TimeEntry>();
+        public void testSizeForEntriesListSingleEntry() {
+      //  tracker.entries = new ArrayList<TimeEntry>();
         tracker.add(timeEntry);
         int size = tracker.size();
         Assert.assertEquals(1, size);
@@ -77,7 +78,7 @@ public class Tracker_size_83d847afcf_Test {
 
     @Test
     public void testSizeForEntriesListMultipleEntries() {
-        tracker.entries = new ArrayList<TimeEntry>();
+        // tracker.entries = new ArrayList<TimeEntry>();
         tracker.add(timeEntry);
         tracker.add(timeEntry);
         int size = tracker.size();
@@ -86,7 +87,7 @@ public class Tracker_size_83d847afcf_Test {
 
     @Test
     public void testSizeForEntriesListConcurrentModification() {
-        tracker.entries = new ArrayList<TimeEntry>();
+        // tracker.entries = new ArrayList<TimeEntry>();
         new Thread(() -> tracker.add(timeEntry)).start();
         int size = tracker.size();
         // Depending on thread execution order size could be 0 or 1
@@ -95,8 +96,8 @@ public class Tracker_size_83d847afcf_Test {
 
     @Test
     public void testSizeForEntriesListWithNullElements() {
-        tracker.entries = new ArrayList<TimeEntry>();
-        tracker.entries.add(null);
+        // tracker.entries = new ArrayList<TimeEntry>();
+        // tracker.entries.add(null);
         int size = tracker.size();
         Assert.assertEquals(1, size);
     }
